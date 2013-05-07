@@ -1,0 +1,350 @@
+/**
+* Description: Grid theme for Nexus based on less, lessphp and semantic.gs.
+*/
+
+/** --------------------------------------------------------------
+ * Reset. http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
+ *
+ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,
+figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,
+time,mark,audio,video{margin:0;padding:0;border:0;font-size:100.01%;font:inherit;vertical-align:baseline;}
+body{line-height:1;}
+ol,ul{list-style: none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+
+
+/** --------------------------------------------------------------
+ * HTML5 elements.
+ *
+ */
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
+audio:not([controls]){display:none;}
+[hidden]{display:none;}
+
+
+/** --------------------------------------------------------------
+* semantic.gs
+*/
+@import url('semantic.gs/stylesheets/less/grid.less');
+
+// Style using less
+@color: #000000;
+@font: 1em "Palatino Linotype", "Book Antiqua", Palatino, serif;
+@font-family-monospace: "Courier new", "Courier";
+@border-radius: 7px;
+
+/* Wrap elements to site width in grid layout*/
+.wrap() {
+	width: @total-width;
+	margin: 0 auto;
+	.clearfix();
+}
+
+@magic-number:22px;
+
+
+
+
+
+
+/* Text elements */
+p{margin-bottom:1.375em;}
+a{color:maroon;text-decoration:underline;
+  &:focus,&:hover{color:lighten(maroon, 10%);text-decoration:none;}
+}
+blockquote{margin-left:1em;margin-bottom:1.375em;}
+strong,dfn{font-weight:bold;}
+em,dfn{font-style:italic;}
+pre{margin-bottom:1.375em;white-space:pre;}
+pre,code,tt,.code{font:1em/1.375 @font-family-monospace;}
+
+/* Lists */
+li ul,li ol{margin:0;}
+ul,ol{margin:0.6875em 1.5em 1.375em 0;padding-left:1.5em;}
+ul{list-style-type:disc;}
+ol{list-style-type:decimal;}
+dl{margin:0 0 1.375em 0;}
+dl dt{font-weight:bold;}
+dd{margin-left:1.5em;}
+
+
+
+
+
+html{
+	background: #3B3B3B url('classy_fabric.png') left top repeat;
+	color: white;
+}
+
+body{
+	font: @font;
+}
+
+.headings-general() {font-weight:normal;color:#111;margin-bottom:@magic-number; margin-top: @magic-number;}
+h1{.headings-general;font-size:2.375em;line-height:1.1579;border-bottom:1px solid #ccc;margin-bottom:@magic-number - 1px;}
+h2{.headings-general;font-size:1.875em;line-height:1.4667;}
+h3{.headings-general;font-size:1.375em;line-height:1;}
+h4{.headings-general;font-size:1.25em;line-height:1.1;}
+h5{.headings-general;font-size:1em;font-weight:bold;}
+h6{.headings-general;font-size:1em;font-weight:bold;margin-bottom:0;}
+h1 img,h2 img,h3 img,h4 img,h5 img,h6 img{margin:0;}
+
+p{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+a{
+	color: maroon;
+	text-decoration: none;
+}
+a:hover{
+	color: red;
+}
+
+legend{
+	padding: 10px;
+}
+
+figure{
+	margin: 10px;
+	padding: 0px;
+}
+
+figcaption{
+}
+
+
+
+
+
+#outer-wrap-page{
+	margin-top: @magic-number/2;
+	margin-bottom: @magic-number/2;
+}
+#inner-wrap-page{
+	.wrap();
+}
+#page{
+	color: @color;
+	background: #F8F8F8 url('debut_light.png') left top repeat;
+	border: 1px solid black;
+	border-radius: @border-radius;
+	padding: 10px;
+	.clearfix();
+}
+
+header{
+	padding: 10px;
+	font-family: "Times New Roman", Times, serif;
+	overflow: auto;
+}
+header #logocontainer{
+	float: left;
+}
+header #logo{
+	float: left;
+}
+header #header{
+	float: left;
+	font-size: 250%;
+	font-weight: bold;	
+	color: #D8D8D8;
+	font-family: Georgia, serif;
+}
+header #slogan{
+	display: block;
+}
+
+header #menu{
+	float: right;
+	font-size: 130%;
+}
+header #menu a{
+	margin-left: 20px;
+}
+
+div#pagecontent{
+	padding: 20px;
+}
+
+
+
+
+#outer-wrap-footer{
+	margin-top: @magic-number/2;
+	margin-bottom: @magic-number/2;
+}
+
+#inner-wrap-footer{
+	.wrap();
+}
+footer{
+	color: white;
+	font-size: 80%;
+}
+footer a{
+	color: silver;
+}
+footer a:hover{
+	color: red;
+}
+footer #debug{
+	background: #F8F8F8 url('grey_wash_wall.png') left top repeat;
+	color: white;
+	margin: 20px auto;	
+	border: 1px solid black;
+	border-radius: @border-radius;
+	padding: 10px;
+}
+
+
+#primary-with-sidebar{
+	.column(8);
+}
+#primary-no-sidebar{
+	.column(12);
+}
+#sidebar{
+	.column(3);
+}
+
+
+#me-img-container{
+	.column(3);
+	font-style: italic;
+}
+
+.me-img{
+	max-width: 100%;
+	height: auto;
+	border: 1px solid black;
+}
+
+
+.me-content{
+	.column(8);
+}
+
+
+
+#inner-wrap-bottom-column{
+	.wrap();
+	height: (@magic-number*5);
+	padding-bottom:@magic-number;
+}
+#bottom{
+	height:inherit;
+}
+
+#bottom-column-one,
+#bottom-column-two,
+#bottom-column-three,
+#bottom-column-four{
+	outline: 1px solid gray;
+	.column(3);
+	font-size:0.9em;
+	margin-top:1em;
+	height:100%;
+	text-align: center;
+}
+
+
+
+
+
+
+/**
+* User feedback message wrappers.
+*/
+.error, .alert, .warning, .notice, .success, .info {
+padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.error, .alert { background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
+.notice, .warning { background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success { background: #e6efc2; color: #264409; border-color: #c6d880; }
+.info { background: #d5edf8; color: #205791; border-color: #92cae4; }
+.error a, .alert a { color: #8a1f11; }
+.notice a, .warning a { color: #514721; }
+.success a { color: #264409; }
+.info a { color: #205791; }
+
+
+/** --------------------------------------------------------------
+ * Login menu
+ */
+#login-menu{
+	.wrap();
+	
+	margin-top:@magic-number/2;
+	text-align: right;
+	font-size:0.95em;
+	
+	a{color: lime;}
+	img.gravatar{vertical-align:middle;}
+}
+
+
+/** --------------------------------------------------------------
+ * Navbar
+ */
+.navbar(){
+  float: right;
+  ul.menu{list-style-type:none;padding:2px 8px;margin:0;
+    li{padding:0;margin:0;display:inline;
+      a{padding:6px 8px;text-decoration:none;
+        &.selected{ font-weight: bold;}
+      }
+    }
+  }
+  clear: right;
+}
+#sys-navbar{
+	.navbar();
+	font-size: 1.3em;
+}
+#me-navbar{
+	.navbar();
+	font-size: 1em;
+}
+
+
+
+/**
+* For the Source application
+**/
+.filelist{
+	padding-left: 0px;
+}
+.filelist li{
+	list-style-type: none;
+	line-height: 200%;
+	padding-left: 40px;
+}
+.filelist li.dir{
+	background: url('folder.png') no-repeat left center;
+}
+ul.filelist li.file{
+	background: url('text-x-generic.png') no-repeat left center;
+}
+
+fieldset.filecontents{
+	margin: -11px;
+	border: 1px solid silver;
+	border-radius: 5px;
+	font-family: "Courier New", Courier, monospace;
+	padding: 10px;
+	background-color: white;
+	overflow: auto;
+}
+fieldset.filecontents div{
+	overflow: auto;
+	width: 900px;
+}
