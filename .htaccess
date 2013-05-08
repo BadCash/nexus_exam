@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /http/www/BTH/phpmvc/nexus_dev/
+RewriteBase /~mawi13/phpmvc/nexus_exam/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule (.*) index.php/$1 [NC,L]
