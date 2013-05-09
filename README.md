@@ -8,7 +8,7 @@ frameworks with a taste of Content Management Framework (CMF).
 Installation
 ------------
 
-* Download the source code from http://www.github.com/BadCash/nexus and copy it to your webserver.
+* Download the source code from http://www.github.com/BadCash/nexus_exam and copy it to your webserver.
 
 * **Important:** Edit the RewriteBase in the .htaccess file to match the path to your installation!
 
