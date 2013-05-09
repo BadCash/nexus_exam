@@ -1,3 +1,9 @@
+**Nexus MVC på GitHub**  
+https://github.com/BadCash/nexus_exam
+
+**Referensinstallation**  
+http://www.student.bth.se/~mawi13/phpmvc/nexus_exam/  
+För inloggning kan man använda root/root eller doe/doe (användarnamn/lösenord)
 
 
 Krav K1 - Installera från GitHub
@@ -62,16 +68,9 @@ det enkelt för mig och uppdaterade CMContent::Filter() till att använda CTextF
 så vis behövde jag inte leta upp alla de ställen där CMContent::Filter() används och ändra överallt.
 
 
-Krav K6 - Projektdokumentation och referensinstallation
+Krav K6 - Mina tankar kring Nexus MVC
 -------------------------------------------------------
-**Nexus MVC på GitHub**  
-https://github.com/BadCash/nexus_exam
 
-**Referensinstallation**  
-http://www.student.bth.se/~mawi13/phpmvc/nexus_exam/  
-För inloggning kan man använda root/root eller doe/doe (användarnamn/lösenord)
-
-**Mina tankar kring Nexus MVC**  
 Jag vet inte riktigt vad jag tycker om mitt ramverk. I den form det har i nuläget tycker jag det känns väldigt ofärdigt. Själva 
 poängen med ett ramverk är ju att det ska förenkla för den som ska göra en webbplats, och på ett sätt kan man väl säga
 att Nexus/Lydia gör det. Å andra sidan blir det mycket meckande om man vill göra något "utanför ramarna", och det känns
