@@ -1,10 +1,36 @@
 Redovisning
 ===========
 
-Mom08/10 - Projekt
+Mom08 - Projekt
+-----------------------------------------------
+Nexus: http://www.student.bth.se/~mawi13/phpmvc/nexus_exam/  
+Källkod: http://www.student.bth.se/~mawi13/phpmvc/nexus_exam/source/display  
 
-Ändrade CMContent::Filter() till att använda CTextFilter::Filter()
-Lade till funktioner i CCBlog, CContent och CMContent för att visa innehåll från en specifik användare
+Projektet borde varit ganska enkelt att göra, men jag lyckades krångla till det rejält. Hade tänkt göra en helt automatisk
+installationsprocess, men det stupade på mållinjen. På grund av problem med filrättigheter fick jag inte min installationsprocess
+att fungera på BTH's server, så jag valde att istället låta användaren göra en del inställningar manuellt. Detta borde dock
+inte vara något problem, eftersom en användare av ett PHP-ramverk rimligtvis bör kunna hitta och ändra inställningarna i 
+config.php. Hade det varit något avsett för oerfarna datoranvändare hade läget såklart varit ett helt annat...
+
+Ett annat intressant problem som dök upp var en liten bugg i CRequest som gjorde att en kontroller vars namn började på 
+bokstäverna i n d e x inst fungerade. Jag upptäckte det eftersom min installationskontroller heter "installer". Det var dock
+relativt lätt åtgärdat efter att ha lokaliserat felet.
+
+Svårighetsgraden på projektet var lagom tycker jag, även om jag inte hann med att implementera alla de valfria delarna. Dock
+tycker jag ramverket överlag är något förvirrande (är det tänkt att det ska finnas EN blogg, eller ska varje användare ha 
+en egen, etc.). Detta gjorde att jag drog mig lite för att försöka göra admin-gränssnittet.
+
+Själva kursen tycker jag kunde varit bättre. Jag hade förväntat mig att den skulle gå ut på att arbeta i något/några existerande
+ramverk, inte att bygga ett eget från grunden. Git tycker jag mest har ställt till det, även om det kan vara ett smidigt sätt
+att hålla reda på olika versioner. Men helt ärligt - kommandoradsprogram borde väl inte finnas år 2013? 
+Tycker Mos gjort ett bra jobb med instruktionerna, men det känns som att det blir lite för mycket att hålla reda på. 
+Det slutar med att man har 10 tabbar med instruktioner, föreläsningar, artiklar och tutorialer öppna. Det var bättre i 
+HTMLPHP-kursen där varje övning hade EN steg-för-steg sida med instruktioner. 
+
+Jag skulle enbart rekommendera denna kursen till någon som vill lära sig hur man bygger ett eget ramverk i PHP från grunden. 
+Jag ger den 5/10.
+
+
 
 
 

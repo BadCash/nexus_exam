@@ -8,9 +8,11 @@ frameworks with a taste of Content Management Framework (CMF).
 Installation
 ------------
 
-Download the source code from http://www.github.com/BadCash/nexus and copy it to your webserver.
-Then visit the following URL in your browser: <url_to_nexus>/installer
-This will take you through the installation process.
+* Download the source code from http://www.github.com/BadCash/nexus and copy it to your webserver.
+
+* **Important:** Edit the RewriteBase in the .htaccess file to match the path to your installation!
+
+* Then visit the following URL in your browser: <url_to_nexus>/installer . This will take you through the installation process.
 
 
 Customization
@@ -48,7 +50,9 @@ to compile the CSS stylesheet when needed. That's why it's name is style.php and
 **Changing the menu**
 
 Locate the config.php file as described in the previous section, and locate the line that says
-"$nx->config['menus'] = array(". This is where you edit the menu items.
+"$nx->config['menus'] = array(". This is where you edit the menu items. Note that the changes you make to the names of
+menus here must also be reflected in the template files you are using, as well as in the *menu_to_region* -mapping in the
+config.sys -file.
 
 
 

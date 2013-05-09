@@ -144,6 +144,7 @@ $nx->config['routing'] = array(
  */
 $nx->config['menus'] = array(
 	'sys-navbar' => array(
+		'projectdoc' => array( 'label' => 'PROJEKTDOKUMENTATION', 'url' => 'me/projektdokumentation' ),
 		'home' => array( 'label' => 'Nexus', 'url' => 'home' ),
 		'modules' => array( 'label' => 'Moduler', 'url' => 'module' ),
 		'content' => array( 'label' => 'Innehåll', 'url' => 'content' ),

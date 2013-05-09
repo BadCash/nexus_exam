@@ -102,6 +102,7 @@ class CMInstaller extends CObject {
 	   * @param data string The POST-data sent by the form
 	   * @returns boolean true on success and false on failure
 	   **/
+	   /*
 	  public function Config($data) {
 		try{
 			$config = file_get_contents(__DIR__.'/config.php.template');
@@ -123,7 +124,7 @@ class CMInstaller extends CObject {
 		catch( Exception $e ){
 			return false;
 		}
-		
+		*/
 		
 /*
 		if( isset($_SESSION['execs']) ){ 
@@ -137,11 +138,11 @@ class CMInstaller extends CObject {
 		$this->views->AddString( print_r($data, true) );
 		$this->views->AddString( '<p>Execs: '.$_SESSION['execs'].'</p>' );
 */
-	  }
+	  //}
 	  
 	  	  
 	  
-	  
+	  /*
 	  public function XML2Array($strXML){
 		$xml = new SimpleXMLElement( $strXML );
 		$result = array('menu' => "array(\n", 'mapping' => "array( ");
@@ -175,6 +176,6 @@ class CMInstaller extends CObject {
 		return $result;
 	  }
 	 
-	 
+	*/	 
 	 
 }

@@ -79,8 +79,8 @@ class CCInstaller extends CObject implements IController {
 		// If all went OK display Next-button
 		
 		if( $installResults['result'] ){
-			$form = new CForm( array( 'action' => $this->request->CreateUrl('', 'DisplayConfigForm') ), 
-							   array( new CFormElementSubmit('DisplayConfigForm', array('value' => 'Next>>')) ) );
+			$form = new CForm( array( 'action' => $this->request->CreateUrl('', '') ), 
+							   array( new CFormElementSubmit('GotoIndex', array('value' => 'Finish')) ) );
 			$this->views->AddString($form->GetHTML());
 		}
 		
@@ -92,6 +92,7 @@ class CCInstaller extends CObject implements IController {
 	  * Display form for letting the user customize some settings in the config.php -file directly
 	  *
 	  **/
+	  /*
 	  public function DisplayConfigForm(){
 		$form = new CConfigForm( array( 'action' => $this->request->CreateUrl('', 'ExecConfigForm') ), array() );
 		$form->elements['header']['value'] = isset($_POST['header']) ? $_POST['header'] : $this->config['theme']['data']['header'];
@@ -101,12 +102,13 @@ class CCInstaller extends CObject implements IController {
 
 		$this->views->AddString($form->GetHTML());
 	  }
-	  
+	  */
 
     /**
 	* Execute the configuration form
 	*
 	**/
+	/*
 	public function ExecConfigForm(){
 		$configResult = false;
 		
@@ -129,7 +131,7 @@ class CCInstaller extends CObject implements IController {
 		}
 		
 	}
-	  
+	  */
 }
 
 

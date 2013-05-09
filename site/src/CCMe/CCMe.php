@@ -53,4 +53,14 @@ class CCMe extends CObject implements IController {
     $this->views->AddInclude(__DIR__ . '/redovisning.tpl.php', array('content' => $content) );
   }
 
+  /**
+   * Display Projektdokumentation -page
+   */
+  public function Projektdokumentation() {
+    $this->views->SetTitle('Projektdokumentation - Nexus');
+	$content = file_get_contents( __DIR__ . '/projektdokumentation.md' );
+	$content = CTextFilter::Filter($content, array('markdown', 'clickable', 'smartypants'));
+    $this->views->AddInclude(__DIR__ . '/projektdokumentation.tpl.php', array('content' => $content) );
+  }
+
 } 
