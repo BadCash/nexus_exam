@@ -32,7 +32,7 @@ class CNexus implements ISingleton {
 		require(NEXUS_SITE_PATH.'/config.php');
 
 		// Start a named session
-		//session_name($this->config['session_name']);
+		session_name($this->config['session_name']);
 		session_start();
 		$this->session = new CSession($this->config['session_key']);
 		$this->session->PopulateFromSession();
