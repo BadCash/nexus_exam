@@ -27,24 +27,6 @@ class CMInstaller extends CObject {
 	 */
 	 public function Install(){
 			$result = array('result' => true);
-			/*
-			// Set file/directory rights
-			if( @chmod(NEXUS_INSTALL_PATH.'/site/data', 0777) ){
-				$result['filesystem']['datadir'] = array('success', 'Successfully set permissions of directory /site/data.');
-			}
-			else{
-				$result['filesystem']['datadir'] = array('error', "Couldn't set permissions of directory /site/data!");
-				$result['result'] = false;
-			};
-
-			if( @chmod(NEXUS_INSTALL_PATH.'/site/data/.ht.sqlite', 0777) ){
-				$result['filesystem']['dbfile'] = array('success', 'Successfully set permissions of database file /site/data/.ht.sqlite.');
-			}
-			else{
-				$result['filesystem']['dbfile'] = array('error', "Couldn't set permissions of database file /site/data/.ht.sqlite!");
-				$result['result'] = false;
-			};
-			*/
 			
 			// Install modules
 			$moduleManager = new CMModules();
@@ -133,6 +115,7 @@ class CMInstaller extends CObject {
 			$config = str_replace('%%installed%%', 'true', $config);
 						
 			$configfile = NEXUS_INSTALL_PATH . '/site/config.php';
+			chmod($configfile, 0777);
 			file_put_contents( $configfile, $config );
 			
 			return true;

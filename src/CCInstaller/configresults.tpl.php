@@ -7,7 +7,7 @@
 		Or go directly to <a href="<?=base_url()?>">the main page</a>.
 	</p>
 	
-	<?=CTextFilter::Filter( file_get_contents(NEXUS_INSTALL_PATH.'/readme.md'), array('htmlentities', 'markdown') )?>
+	<?=CTextFilter::Filter( file_get_contents(NEXUS_INSTALL_PATH.'/README.md'), array('htmlentities', 'markdown') )?>
 <?php else: ?>
 	<p>
 		Oops, the operation failed! <a href="<?=base_url()?>installer">Try running the installer again</a>

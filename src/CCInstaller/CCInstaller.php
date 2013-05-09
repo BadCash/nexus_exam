@@ -74,7 +74,7 @@ class CCInstaller extends CObject implements IController {
 		$installResults = $this->model->Install();
 		
 		// Display results
-		$this->views->AddInclude(__DIR__ . '/installresults.tpl.php', array('result'=>$installResults['result'], 'moduleResults'=>$installResults['installs'], 'filesystemResults'=>$installResults['filesystem']), 'install_results');
+		$this->views->AddInclude(__DIR__ . '/installresults.tpl.php', array('result'=>$installResults['result'], 'moduleResults'=>$installResults['installs'] ) );
 		
 		// If all went OK display Next-button
 		
