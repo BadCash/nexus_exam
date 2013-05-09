@@ -19,7 +19,7 @@ header('Content-Type: text/html; charset=utf-8');
  * If this is set to true, it is not possible to run the installer again.
  * This is to prevent anyone from running the installer and thereby resetting the entire system.
  */
-$nx->config['installer']['installed'] = 'true';
+$nx->config['installer']['installed'] = 'false';
 
 
 /**
