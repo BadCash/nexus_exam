@@ -39,7 +39,7 @@ class CCInstaller extends CObject implements IController {
 		
 		// Make sure it's possible to install Nexus
 		$arrRequirementTest = $this->model->CheckInstallationRequirements();
-		$this->views->AddInclude(__DIR__ . '/testresults.tpl.php', array('testResults'=>$arrRequirementTest['tests']), 'check_results');
+		$this->views->AddInclude(__DIR__ . '/testresults.tpl.php', array('testResults'=>$arrRequirementTest) );
 
 		// Intallation requirement test failed
 		if( !$arrRequirementTest['result'] ){

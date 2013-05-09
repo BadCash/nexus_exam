@@ -27,7 +27,7 @@ class CMInstaller extends CObject {
 	 */
 	 public function Install(){
 			$result = array('result' => true);
-			
+			/*
 			// Set file/directory rights
 			if( @chmod(NEXUS_INSTALL_PATH.'/site/data', 0777) ){
 				$result['filesystem']['datadir'] = array('success', 'Successfully set permissions of directory /site/data.');
@@ -37,6 +37,15 @@ class CMInstaller extends CObject {
 				$result['result'] = false;
 			};
 
+			if( @chmod(NEXUS_INSTALL_PATH.'/site/data/.ht.sqlite', 0777) ){
+				$result['filesystem']['dbfile'] = array('success', 'Successfully set permissions of database file /site/data/.ht.sqlite.');
+			}
+			else{
+				$result['filesystem']['dbfile'] = array('error', "Couldn't set permissions of database file /site/data/.ht.sqlite!");
+				$result['result'] = false;
+			};
+			*/
+			
 			// Install modules
 			$moduleManager = new CMModules();
 			$installationResult = @$moduleManager->Install();
@@ -50,15 +59,7 @@ class CMInstaller extends CObject {
 					$result['result'] = false;
 				}
 			}
-			
-			if( @chmod(NEXUS_INSTALL_PATH.'/site/data/.ht.sqlite', 0777) ){
-				$result['filesystem']['dbfile'] = array('success', 'Successfully set permissions of database file /site/data/.ht.sqlite.');
-			}
-			else{
-				$result['filesystem']['dbfile'] = array('error', "Couldn't set permissions of database file /site/data/.ht.sqlite!");
-				$result['result'] = false;
-			};
-			
+						
 			return $result;
 	 }
 	 
@@ -90,7 +91,25 @@ class CMInstaller extends CObject {
 				$result['tests']['dbdriver'] = array('success', "The database driver '{$driver_displayname}' is installed.");
 			}
 		}
-		
+
+		//  Check if site/data -directory has write permissions
+		if( !is_writable(NEXUS_INSTALL_PATH.'/site/data') ){
+			$result['result'] = false;
+			$result['tests']['dataperms'] = array('error', "PHP does not have write permissions for the directory '".NEXUS_INSTALL_PATH.'/site/data'."'! Correct this by setting the permissions for this directory to full access." );
+		}
+		else{
+			$result['tests']['dataperms'] = array('success', "PHP has write permissions for the directory '".NEXUS_INSTALL_PATH.'/site/data'."'.");
+		}
+				
+
+		//  Check if database file has write permissions
+		if( !is_writable(NEXUS_INSTALL_PATH.'/site/data/.ht.sqlite') ){
+			$result['result'] = false;
+			$result['tests']['dbperms'] = array('error', "PHP does not have write permissions for the file '".NEXUS_INSTALL_PATH.'/site/data/.ht.sqlite'."'! Correct this by setting the permissions for this file to full access.");
+		}
+		else{
+			$result['tests']['dbperms'] = array('success', "PHP has write permissions for the directory '".NEXUS_INSTALL_PATH.'/site/data/.ht.sqlite'."'.");
+		}
 		return $result;
 	 }	 
 	 
